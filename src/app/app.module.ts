@@ -29,6 +29,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PushNotificationPage } from '../pages/push-notification/push-notification';
 
+import { Firebase } from '@ionic-native/firebase';
+
 
 
 @NgModule({
@@ -71,7 +73,8 @@ import { PushNotificationPage } from '../pages/push-notification/push-notificati
     StorageServiceProvider,
     GoogleMaps,
     AndroidPermissions,
-    Geolocation
+    Geolocation,
+    Firebase
   ],
   exports: [
   ]

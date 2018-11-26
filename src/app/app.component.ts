@@ -15,6 +15,7 @@ import { StorageServiceProvider } from '../providers/storage-service/storage-ser
 import { ParallaxPage } from '../pages/parallax/parallax';
 import { MapsPage } from '../pages/maps/maps';
 import { PushNotificationPage } from '../pages/push-notification/push-notification';
+import { Firebase } from '@ionic-native/firebase';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,7 +37,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, 
     private menu: MenuController, private modalCtrl: ModalController, 
     private store: Store<AppState>, private storageService: StorageServiceProvider,
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController, private firebase: Firebase) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -46,10 +47,19 @@ export class MyApp {
       platform.registerBackButtonAction(() => {
 
         if(this.activePage == 'Home') platform.exitApp();
-
         else  this.goBack();
       } )
 
+      firebase.getToken().then(token => console.log(token)).catch(err=> console.log(err));
+      firebase.onNotificationOpen().subscribe(data=>{
+
+        let alert = this.alertCtrl.create({
+          title: "Notification: "+data.name+" = "+data,
+          buttons: ['Ok']
+        });
+        alert.present();
+
+      }, err=> console.log(err));
       this.menuHomeActive();
     });
 
