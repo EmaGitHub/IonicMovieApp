@@ -30,6 +30,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { PushNotificationPage } from '../pages/push-notification/push-notification';
 
 import { Firebase } from '@ionic-native/firebase';
+import { FcmProvider } from '../providers/fcm/fcm';
 
 
 
@@ -74,7 +75,8 @@ import { Firebase } from '@ionic-native/firebase';
     GoogleMaps,
     AndroidPermissions,
     Geolocation,
-    Firebase
+    Firebase,
+    FcmProvider
   ],
   exports: [
   ]
