@@ -1,0 +1,54 @@
+// http://ionicframework.com/docs/theming/
+ion-menu [submenu] {
+    display: block;
+    padding-left: 25px;
+    overflow: hidden;
+    max-height: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: transform .2s linear, max-height 0s .2s linear;
+    &.visible {
+        max-height: 9999px;
+        transform: scaleY(1);
+        transition: transform .2s linear, max-height 0s linear;
+    }
+}
+
+.sidemenu {}
+
+.menuButton {
+    height: 80px;
+}
+
+#menuToggleButton {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT license
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.

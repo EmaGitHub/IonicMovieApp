@@ -1,0 +1,67 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle right>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="center">{{title}}
+            <br>
+            <div *ngIf="accessState">
+                <ion-icon *ngIf="!preferite" name="star-outline" (click)="addFavourite()"></ion-icon>
+                <ion-icon *ngIf="preferite" name="star" (click)="removeFavourite()"></ion-icon>
+            </div>
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content class="cont">
+
+    <img class="background-img" src={{poster_path}}{{posterPath}}>
+
+    <div class="center" *ngIf="accessState">
+        <button class="prefButtonAdd" ion-button *ngIf="!preferite" (click)="addFavourite()" round>Add movie to FAVOURITES</button>
+        <button class="prefButtonRem" ion-button *ngIf="preferite" (click)="removeFavourite()" outline round>Remove movie from FAVOURITES</button>
+    </div>
+
+    <ion-grid>
+        <ion-row justify-content-center align-items-center>
+            <img id="filmImg" src={{poster_path}}{{posterPath}}>
+        </ion-row>
+    </ion-grid>
+
+    <div padding>
+
+        <p><b>Genre </b>: {{genre}}</p>
+
+        <p><b>Overview</b> : {{overview}}</p>
+        <p><b>Popularity </b>: {{popularity}}</p>
+        <p><b>Tag line </b>: {{tagline}}</p>
+
+        <h2 class="center">Production companies:</h2>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngFor="let company of productionCompanies">
+
+                    <p class="center">{{company.name}}</p>
+                    <p class="center">
+                        <img class="companyPic" src="{{poster_path}}{{company.logo_path}}">
+                    </p>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </div>
+
+    <br>
+    <br>
+
+</ion-content>

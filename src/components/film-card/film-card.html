@@ -1,0 +1,44 @@
+<!-- Generated template for the FilmCardComponent component -->
+<ion-card id="card" (click)="navigateToDetail(film.id)">
+
+    <ion-row>
+        <ion-item id="cardHeader" text-wrap>
+
+            <h1 id="title"><b>{{film.title}}</b></h1>
+            <ion-icon name="calendar"></ion-icon> {{film.release_date | date:longDate}}
+
+        </ion-item>
+
+        <ion-col col-8 padding>
+
+            <ion-row>
+                <h3>
+                    <ion-icon name="trophy"></ion-icon>
+                    Vote: {{film.vote_average}}
+                </h3>
+            </ion-row>
+            <br>
+            <ion-row>
+                <div id="overview"> <b>Overview: </b> {{film.overview}} </div>
+            </ion-row>
+
+        </ion-col>
+
+        <ion-col col-4 padding class="imgContainer">
+            <img id="filmImage" src={{poster_path}}{{film.poster_path}}>
+        </ion-col>
+
+    </ion-row>
+
+    <ion-row id="cardFooter">
+
+        <ion-col>
+            <button ion-button icon-start clear small>
+        <ion-icon name="share"></ion-icon>
+        <div>Share</div>
+      </button>
+        </ion-col>
+
+    </ion-row>
+
+</ion-card>

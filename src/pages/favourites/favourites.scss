@@ -1,0 +1,16 @@
+page-favourites {
+    #content {
+        text-align: center;
+        background: #4C8DFC
+    }
+    #resetButton {
+        height: 50px;
+    }
+    .prefButtonDelete {
+        height: 50px;
+        background: white;
+    }
+    .prefButtonDelete:hover {
+        background: white !important;
+    }
+}

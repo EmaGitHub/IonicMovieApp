@@ -1,0 +1,22 @@
+    page-home {
+        .barbottom {
+            position: absolute;
+            bottom: 0px;
+        }
+        .center {
+            text-align: center;
+        }
+        ion-segment-button {
+            border-radius: 25px;
+        }
+        #content {
+            margin-bottom: 500px;
+            background-image: url('../../assets/imgs/back.jpg');
+        }
+        #leftButton {
+            margin-right: 30px
+        }
+        #rightButton {
+            margin-left: 30px
+        }
+    }

@@ -1,0 +1,64 @@
+<ion-menu persistent="true" [content]="content" id="menuHome" side="right">
+
+
+
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Options Drawer </ion-title>
+            <br>
+            <p *ngIf="accessState">Logged User: {{username}}</p>
+            <p *ngIf="!accessState">Guest User</p>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="sidemenu">
+        <ion-list id="sidenav">
+            <!-- menu items -->
+            <ion-item class="menuButton" (click)="navigateToParallax()" menuClose>Parallax</ion-item>
+            <ion-item *ngIf="accessState" class="menuButton" (click)="navigateToFavourites()" menuClose>Favourites</ion-item>
+            <ion-item class="menuButton" (click)="navigateToMaps()" menuClose>Maps</ion-item>
+            <ion-item class="menuButton" (click)="navigateToPushNotification()" menuClose>Push Notification</ion-item>
+            <ion-item class="menuButton" (click)="menuItemHandler()">Account</ion-item>
+            <ion-item-group submenu [class.visible]="showSubmenu">
+                <ion-item *ngIf="!accessState" submenu-item class="menuButton" (click)="openLoginModal()" menuClose>Login</ion-item>
+                <ion-item *ngIf="accessState" submenu-item class="menuButton" (click)="logout()" menuClose>Logout</ion-item>
+                <ion-item submenu-item class="menuButton" (click)="openRegisterModal()" menuClose>Register new account</ion-item>
+            </ion-item-group>
+            <!-- menu items -->
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-menu persistent="true" [content]="content" id="menuDetail" side="right">
+
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Options Drawer</ion-title>
+            <br>
+            <p *ngIf="accessState">Logged User: {{username}}</p>
+            <p *ngIf="!accessState">Guest User</p>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="sidemenu">
+        <ion-list id="sidenav">
+            <!-- menu items -->
+            <ion-item class="menuButton" (click)="navigateToParallax()" menuClose>Parallax</ion-item>
+            <ion-item *ngIf="accessState" class="menuButton" (click)="navigateToFavourites()" menuClose>Favourites</ion-item>
+            <ion-item ion-item (click)="goBackHome()" menuClose class="menuButton">back to Home page</ion-item>
+            <ion-item class="menuButton" (click)="navigateToMaps()" menuClose>Maps</ion-item>
+            <ion-item class="menuButton" (click)="navigateToPushNotification()" menuClose>Push Notification</ion-item>
+            <ion-item class="menuButton" (click)="menuItemHandler()">Account</ion-item>
+            <ion-item-group submenu [class.visible]="showSubmenu">
+                <ion-item *ngIf="!accessState" submenu-item class="menuButton" (click)="openLoginModal()" menuClose>Login</ion-item>
+                <ion-item *ngIf="accessState" submenu-item class="menuButton" (click)="logout()" menuClose>Logout</ion-item>
+                <ion-item submenu-item class="menuButton" (click)="openRegisterModal()" menuClose>Register new account</ion-item>
+            </ion-item-group>
+            <!-- menu items -->
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

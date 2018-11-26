@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+        <button ion-button menuToggle right>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        <ion-title>Ionic Movie App</ion-title>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="content" padding>
+
+
+    <div *ngFor="let film of films">
+        <film-card [film]="film"></film-card>
+    </div>
+
+
+    <ion-toolbar class="center">
+
+        <ion-row>
+            <ion-col>
+                <button *ngIf="page>1" ion-button id="leftButton" (click)="previousPage()"> 
+                    <ion-icon name="arrow-round-back"></ion-icon> 
+                </button>
+            </ion-col>
+
+            <ion-col>
+                <h3>Page: {{page}}</h3>
+            </ion-col>
+            <ion-col>
+
+                <button ion-button id="rightButton" (click)="nextPage()"> 
+                    <ion-icon name="arrow-round-forward"></ion-icon> 
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-toolbar>
+
+    <br><br>
+    <hr>
+
+</ion-content>
+
+<ion-toolbar class="barbottom">
+    <ion-segment [(ngModel)]="category" (ionChange)="changedCategory()">
+        <ion-segment-button value="popular">
+            Most poular
+        </ion-segment-button>
+        <ion-segment-button value="recent">
+            Most recent
+        </ion-segment-button>
+    </ion-segment>
+
+</ion-toolbar>

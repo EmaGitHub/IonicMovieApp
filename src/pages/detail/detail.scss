@@ -1,0 +1,30 @@
+page-detail {
+    .companyPic {
+        height: 150px;
+    }
+    #filmImg {
+        height: 250px;
+    }
+    .cont {
+        overflow-y: scroll;
+    }
+    .background-img {
+        text-align: center;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.1;
+        position: fixed;
+        z-index: -1;
+    }
+    .prefButtonAdd {
+        height: 50px;
+    }
+    .prefButtonRem {
+        height: 50px;
+        background: white;
+    }
+    .center {
+        text-align: center;
+    }
+}

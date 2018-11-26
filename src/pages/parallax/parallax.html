@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ParallaxPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>parallax</ion-title>
+    </ion-navbar>
+
+
+
+
+    <div class="parallax">
+        <div class="parallax__layer parallax__layer--back">
+        </div>
+        <div class="parallax__layer parallax__layer--base">
+            <div>
+                <div *ngFor="let i of numbers, let i= index">
+                    test {{i}} _________________________________________
+                    <hr>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
